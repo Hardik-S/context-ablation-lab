@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "conditions": [
+    "short",
+    "expanded"
+  ],
+  "tasks": [
+    {
+      "id": "synthetic-label-count",
+      "sha256": "3a3975964ea781ce5d0a3c8c2a26262747183d6bf706ce51afd6110168b90a7a"
+    }
+  ],
+  "replicates": [
+    "replicate-1"
+  ]
+}

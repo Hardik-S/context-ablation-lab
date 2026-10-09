@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "run_id": "synthetic-run-001",
+      "task_id": "synthetic-task-a",
+      "task_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "condition": "short",
+      "replicate": "replicate-1",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "test_passed": true,
+      "evidence": "synthetic://evidence/run-001"
+    },
+    {
+      "run_id": "synthetic-run-002",
+      "task_id": "synthetic-task-a",
+      "task_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "condition": "expanded",
+      "replicate": "replicate-1",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "test_passed": true,
+      "evidence": "synthetic://evidence/run-002"
+    },
+    {
+      "run_id": "synthetic-run-003",
+      "task_id": "synthetic-task-a",
+      "task_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "condition": "short",
+      "replicate": "replicate-2",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "test_passed": false,
+      "evidence": "synthetic://evidence/run-003"
+    },
+    {
+      "run_id": "synthetic-run-004",
+      "task_id": "synthetic-task-a",
+      "task_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "condition": "expanded",
+      "replicate": "replicate-2",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "test_passed": true,
+      "evidence": "synthetic://evidence/run-004"
+    },
+    {
+      "run_id": "synthetic-run-005",
+      "task_id": "synthetic-task-b",
+      "task_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "condition": "short",
+      "replicate": "replicate-1",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "test_passed": true,
+      "evidence": "synthetic://evidence/run-005"
+    },
+    {
+      "run_id": "synthetic-run-006",
+      "task_id": "synthetic-task-b",
+      "task_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "condition": "expanded",
+      "replicate": "replicate-1",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "test_passed": false,
+      "evidence": "synthetic://evidence/run-006"
+    },
+    {
+      "run_id": "synthetic-run-007",
+      "task_id": "synthetic-task-b",
+      "task_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "condition": "short",
+      "replicate": "replicate-2",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "7777777777777777777777777777777777777777777777777777777777777777",
+      "test_passed": false,
+      "evidence": "synthetic://evidence/run-007"
+    },
+    {
+      "run_id": "synthetic-run-008",
+      "task_id": "synthetic-task-b",
+      "task_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "condition": "expanded",
+      "replicate": "replicate-2",
+      "model": "synthetic-model-v1",
+      "harness": "synthetic-harness-v1",
+      "context_sha256": "8888888888888888888888888888888888888888888888888888888888888888",
+      "test_passed": false,
+      "evidence": "synthetic://evidence/run-008"
+    }
+  ]
+}

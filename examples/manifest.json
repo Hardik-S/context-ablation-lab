@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "conditions": ["short", "expanded"],
+  "tasks": [
+    {
+      "id": "synthetic-task-a",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "synthetic-task-b",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "replicates": ["replicate-1", "replicate-2"]
+}

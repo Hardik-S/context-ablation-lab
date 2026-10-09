@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "run_id": "synthetic-label-count-short-replicate-1",
+      "task_id": "synthetic-label-count",
+      "task_sha256": "3a3975964ea781ce5d0a3c8c2a26262747183d6bf706ce51afd6110168b90a7a",
+      "condition": "short",
+      "replicate": "replicate-1",
+      "model": "gpt-6-luna",
+      "harness": "Codex subagent executor",
+      "context_sha256": "4c319b00d7b197644d8c28c91ca153e6ad493c7b7fc45fe7abdf7f6a44c00013",
+      "test_passed": true,
+      "evidence": "experiments/paired-exercise/short/evidence.md"
+    },
+    {
+      "run_id": "synthetic-label-count-expanded-replicate-1",
+      "task_id": "synthetic-label-count",
+      "task_sha256": "3a3975964ea781ce5d0a3c8c2a26262747183d6bf706ce51afd6110168b90a7a",
+      "condition": "expanded",
+      "replicate": "replicate-1",
+      "model": "gpt-6-luna",
+      "harness": "Codex subagent executor",
+      "context_sha256": "161de751e86d642924da0efc47a801c9403c8d799375d84e3cd7fe8b8b77b4fb",
+      "test_passed": true,
+      "evidence": "experiments/paired-exercise/expanded/evidence.md"
+    }
+  ]
+}
