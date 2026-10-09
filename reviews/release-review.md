@@ -55,3 +55,19 @@ python -m venv $reviewVenv
 & $reviewPy -m context_ablation_lab analyze examples/manifest.json examples/runs.json --format json
 & "$reviewVenv\Scripts\context-ablate.exe" analyze examples/manifest.json examples/runs.json --format text
 ```
+
+## Independent final release gate — PASS — 2026-10-09
+
+Reviewed the complete committed tree at `9225091501ad907a4f3325feff3c308d41e01737` against issue #8 and the frozen acceptance gate. The earlier review #4 repairs are present: empty `tasks` and `replicates` are rejected; JSON parsing rejects nested `NaN` and duplicate keys; regression tests cover task-hash, model, harness, and missing-run failures. The paired analyzer checks complete task × replicate × condition coverage, unique IDs/cells, task hashes, paired identity, and distinct context hashes.
+
+### Verification
+
+- `python -m pytest -q` — **25 passed in 1.78s** on local Python 3.13.1.
+- `$env:PYTHONPATH = (Resolve-Path src).Path; python -m context_ablation_lab analyze examples/manifest.json examples/runs.json --format json` — **exit 0**, 4 pairs; both conditions 2/4 passed; 1 both-pass, 1 both-fail, and one discordance in each direction.
+- `$env:PYTHONPATH = (Resolve-Path src).Path; python -m context_ablation_lab analyze examples/paired-experiment-manifest.json examples/paired-experiment-runs.json --format json` — **exit 0**, one both-pass pair. `Get-FileHash -Algorithm SHA256` confirmed the task hash and both context hashes match the paired receipt; model, harness, and replicate agree, and context hashes differ.
+- Fresh local install attempt: `python -m venv $reviewVenv`, then `& $reviewPy -m pip install -e ".[dev]" --disable-pip-version-check` — venv creation succeeded; pip stopped with Windows `WinError 32` while installing `pygments` because the target file was in use. I stopped local install retries. The pinned commit's GitHub Actions run independently completed the clean install, suite, and installed CLI quickstart on every matrix leg.
+- `gh run view 37952347599 --json databaseId,headSha,status,conclusion,event,workflowName,jobs,url` — workflow **CI**, head SHA matches the reviewed commit, event `push`, overall **completed / success**. All four jobs passed: `test (ubuntu-latest, 3.10)`, `test (ubuntu-latest, 3.13)`, `test (windows-latest, 3.10)`, and `test (windows-latest, 3.13)`. Each passed editable dev install, pytest, and the installed `context-ablate` JSON quickstart. Run: https://github.com/Hardik-S/context-ablation-lab/actions/runs/37952347599
+
+The checked-in receipts are labeled synthetic. The exercise's task/context hashes were verified against their files; README and LAUNCH.md state the one-task/one-replicate evidence does not establish quality, generalization, causality, or benchmark performance, and that token/cost comparison is unavailable. Source and launch surfaces expose local JSON parsing and descriptive summaries only; inspection found no network, model-call, or submitted-code execution path. No release-scope mismatch found.
+
+No files outside this append-only review record were changed. No commit or push was made.
